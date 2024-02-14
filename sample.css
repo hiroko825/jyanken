@@ -1,0 +1,44 @@
+html{
+    width: 1200px;
+    margin: auto;
+}
+body{
+    background-color: whitesmoke;
+    text-align:center;
+    font-size: 30px;
+}
+header{
+    flex: auto;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    margin: 60px;
+    border-bottom:1px solid #ccc;
+    font-size: 40px;
+    line-height: 100px;
+}
+footer{
+    margin: 60px;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 30px;
+}
+p{
+    font-size:100%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+}
+ul{
+    padding: 0;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    display:table-cell;  /* 定義 */
+}
+li:hover{
+    background: grey;
+    color:#fff;
+}
