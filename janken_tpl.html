@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css" />
+    <title>じゃんけん</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>今日のじゃんけん</h1>
+      <p>↓選んでね↓</p>
+    </header>
+
+    <main>
+      <ul>
+        <li id="btnG"><img src="guu.jpg"></li>
+        <li id="btnC"><img src="choki.jpg"></li>
+        <li id="btnP"><img src="paa.jpg"></li>
+      </ul>
+      <div>コンピュータの出した手は？<br>
+        <span id="pc_hands"></span></div>
+      <div id="judgment">＜＜＜勝負の結果＞＞＞</div>
+    </main>
+
+    <footer>良い一日を！</footer>
+    <script>
+      $("#btnG").on("click", function () {
+        const r = Math.ceil(Math.random() * 3);
+        let view = "";
+        if (r == 1) {
+          view = '<img src="guu.jpg">';
+          $("#judgment").text("あいこですね");
+        }
+        if (r == 2) {
+          view = '<img src="choki.jpg">';
+          $("#judgment").text("おめでとう！あなたの勝ち");
+        }
+        if (r == 3) {
+          view = '<img src="paa.jpg">';
+          $("#judgment").text("残念！あなたの負け");
+        }
+        $("#pc_hands").html(view);
+      });
+
+      $("#btnC").on("click", function () {
+        const r = Math.ceil(Math.random() * 3);
+        let view = "";
+        if (r == 1) {
+          view = '<img src="guu.jpg">';
+          $("#judgment").text("残念！あなたの負け");
+        }
+        if (r == 2) {
+          view = '<img src="choki.jpg">';
+          $("#judgment").text("あいこですね");
+        }
+        if (r == 3) {
+          view = '<img src="paa.jpg">';
+          $("#judgment").text("おめでとう！あなたの勝ち");
+        }
+
+        $("#pc_hands").html(view);
+      });
+
+      $("#btnP").on("click", function () {
+        const r = Math.ceil(Math.random() * 3);
+        let view = "";
+        if (r == 1) {
+          view = '<img src="guu.jpg">';
+          // 結果
+          $("#judgment").text("おめでとう！あなたの勝ち");
+        }
+        if (r == 2) {
+          view = '<img src="choki.jpg">';
+          $("#judgment").text("残念！あなたの負け");
+        }
+        if (r == 3) {
+          view = '<img src="paa.jpg">';
+          $("#judgment").text("あいこですね");
+        }
+
+        $("#pc_hands").html(view);
+      });
+    </script>
+  </body>
+</html>
